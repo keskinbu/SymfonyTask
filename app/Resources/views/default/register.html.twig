@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %} Register {% endblock %}
+
+{% block body %}
+    {% if error is defined %}
+        <div class="alert alert-danger" role="alert">
+            İşlem Başarısız
+        </div>
+    {% endif %}
+    <div class="container">
+        <div class="register">
+            <form class="form-signin" action="{{ path('register') }}" method="post" data-toggle="validator" novalidate>
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control"
+                           pattern="[a-zA-ZğüşöçİĞÜŞÖÇ0-9]+" placeholder="Username" required="required"
+                           autofocus="autofocus" data-error="Error for username"/>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Password"
+                           data-minlength="6" data-error="The password at least 6 characters"/>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="passwordMatch" class="form-control" name="passwordMatch"
+                           placeholder="Confirm Password" data-match="#password"
+                           data-match-error="Passwords does not match."/>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <button type="submit" class="btn btn-lg btn-primary btn-block">Register</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#form-signin').validator()
+        })
+    </script>
+{% endblock %}

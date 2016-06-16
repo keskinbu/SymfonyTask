@@ -1,0 +1,18 @@
+{
+  "name": "web",
+  "authors": [
+    "Burak Keskin <burak@burakkeskin.com.tr>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

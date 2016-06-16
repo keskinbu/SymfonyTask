@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %} {{ post.title }} {% endblock %}
+{% block body %}
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1>{{ post.title }}</h1>
+            <hr>
+            <p>{{ post.text }}</p>
+        </div>
+    </div>
+
+{% endblock %}
